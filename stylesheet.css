@@ -44,6 +44,7 @@ body
     transition: .3s;
     opacity: 0;
     animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 .navbar a:hover{
     color: #0ef;
@@ -82,6 +83,9 @@ body
 .home-contentv h3:nth-of-type(2)
 {
     margin-bottom: 30px;
+    animation: slideTop is ease forwards;
+    animation-delay: .7s;
+
 }
 .home-content h3 span{
     color: #0ef;
@@ -90,6 +94,7 @@ body
     font-size: 20px;
     opacity:0;
     animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
 }
 .home-sci a{
     display: inline-flex;
@@ -103,7 +108,11 @@ body
     font-size: 20px;
     color: #0ef;
     text-decoration: none;
-    margin: 30px 15px 30px 0;;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
 }
 .home-sci a:hover{
  background: #0ef;
@@ -121,11 +130,25 @@ body
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+    0 0 25px #0ef;
 }
 .btn-box:hover{
     box-shadow: 0 0 5px cyan,
     0 0 25px cyan, 0 0 50px cyan,
     0 0 100px cyan, 0 0 200px cyan
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 6rem;
 }
 
 @keyframes slideRight {
@@ -140,6 +163,18 @@ body
     }
 
     
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateX(0px);
+        opacity: 1;
+    }   
 }
 
 @keyframes slideTop {
@@ -163,6 +198,4 @@ body
             transform: translateY(0px);
             opacity: 1;
         }
-    
-    
 }
